@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 import { TextInputComponent } from './text-input.component';
 
@@ -10,7 +11,10 @@ describe('TextInputComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TextInputComponent ],
-      imports: [FormsModule]
+      imports: [
+          FormsModule,
+          HttpClientModule
+      ]
     })
     .compileComponents();
   }));
