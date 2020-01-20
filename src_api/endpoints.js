@@ -60,7 +60,6 @@ router.get('/schools', (req, res) => {
  * from the database
  */
 router.delete('/schools/:id', (req, res) => {
-    console.log('deleting', req.params.id);
     // retrieve all schools from the database
     School.findOneAndDelete({_id: req.params.id}, (err, school) => {
         if(err) {
