@@ -6,6 +6,19 @@
     transition: max-height 200ms ease-in-out;
 }
 
+.school-added {
+    color: rgb(4, 57, 122);
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out;
+}
+
+.school-added_active {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    max-height: 100px;
+}
+
 .add-school_show {
     max-height: 400px;
 }

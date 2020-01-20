@@ -10,6 +10,17 @@ const School = require('./db/schools');
  *
  * adds a new school document from the request body
  * to the database
+ *
+ * req.body SCHEMA {
+ *   name: String,
+ *   address: {
+ *       street: String,
+ *       suburb: String,
+ *       postcode: Number,
+ *       state: String
+ *   },
+ *   students: Number
+ }
  */
 router.post('/schools', (req, res) => {
     // create new school document
@@ -26,8 +37,8 @@ router.post('/schools', (req, res) => {
 /**
  * /schools GET endpoint
  *
- * retrieves and returns all school documents from
- * the database
+ * retrieves and returns an array of all school documents
+ * from the database
  */
 router.get('/schools', (req, res) => {
     // retrieve all schools from the database

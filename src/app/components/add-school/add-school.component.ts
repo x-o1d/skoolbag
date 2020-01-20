@@ -20,6 +20,8 @@ export class AddSchoolComponent implements OnInit {
     }
 
     show: boolean = false;
+    schoolAdded: boolean = false;
+
     nameError: boolean = false;
     streetError: boolean = false;
     suburbError: boolean = false;
@@ -78,6 +80,10 @@ export class AddSchoolComponent implements OnInit {
         if(allGood) {
             this.schools.addSchool(this.school).subscribe((data) => {
                 this.schools.schoolsUpdated.emit();
+                this.schoolAdded = true;
+                setTimeout(() => {
+                    this.schoolAdded = false;
+                }, 4000);
             });
         }
 
@@ -90,7 +96,7 @@ export class AddSchoolComponent implements OnInit {
             return 'Create new school'
         }
     }
-    
+
     ngOnInit() {
 
     }
