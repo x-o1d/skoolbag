@@ -32,6 +32,7 @@ export class AddSchoolComponent implements OnInit {
     saveSchool() {
         let allGood = true;
 
+        // input validation - start
         if(this.school.name == '') {
             this.nameError = true;
             allGood = false;
@@ -73,7 +74,7 @@ export class AddSchoolComponent implements OnInit {
         } else {
             this.studentsError = false;
         }
-
+        // input validation - end
         if(allGood) {
             this.schools.addSchool(this.school).subscribe((data) => {
                 this.schools.schoolsUpdated.emit();
@@ -89,6 +90,7 @@ export class AddSchoolComponent implements OnInit {
             return 'Create new school'
         }
     }
+    
     ngOnInit() {
 
     }

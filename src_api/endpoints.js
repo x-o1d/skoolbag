@@ -4,6 +4,13 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const School = require('./db/schools');
 
+
+/**
+ * /schools POST endpoint
+ *
+ * adds a new school document from the request body
+ * to the database
+ */
 router.post('/schools', (req, res) => {
     // create new school document
     School.create(req.body, (err, school) => {
@@ -15,6 +22,13 @@ router.post('/schools', (req, res) => {
     });
 })
 
+
+/**
+ * /schools GET endpoint
+ *
+ * retrieves and returns all school documents from
+ * the database
+ */
 router.get('/schools', (req, res) => {
     // retrieve all schools from the database
     School.find({}, (err, schools) => {
@@ -27,6 +41,13 @@ router.get('/schools', (req, res) => {
 
 });
 
+
+/**
+ * /schools/:id DELETE endpoint
+ *
+ * deletes a school document with the specified id
+ * from the database
+ */
 router.delete('/schools/:id', (req, res) => {
     console.log('deleting', req.params.id);
     // retrieve all schools from the database
