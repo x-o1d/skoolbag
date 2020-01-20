@@ -56,7 +56,7 @@ export class AddSchoolComponent implements OnInit {
             this.suburbError = false;
         }
 
-        if(this.school.address.postcode == '' || isNaN(this.school.address.postcode)) {
+        if(this.school.address.postcode == '' || isNaN(Number(this.school.address.postcode))) {
             this.postError = true;
             allGood = false;
         } else {
@@ -70,7 +70,7 @@ export class AddSchoolComponent implements OnInit {
             this.stateError = false;
         }
 
-        if(this.school.students == '' || isNaN(this.school.students)) {
+        if(this.school.students == '' || isNaN(Number(this.school.students))) {
             this.studentsError = true;
             allGood = false;
         } else {

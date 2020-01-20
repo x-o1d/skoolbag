@@ -19,7 +19,7 @@ export interface School {
 export class SchoolsService {
 
     baseURL = 'http://localhost:8000/';
-    public schoolsUpdated: EventEmitter = new EventEmitter();
+    public schoolsUpdated: EventEmitter<boolean> = new EventEmitter();
 
     constructor(private http: HttpClient) { }
 

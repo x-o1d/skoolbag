@@ -1,12 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
+
+import { AddSchoolComponent } from './components/add-school/add-school.component';
+import { ListSchoolsComponent } from './components/list-schools/list-schools.component';
+import { TextInputComponent } from './components/text-input/text-input.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        AddSchoolComponent,
+        ListSchoolsComponent,
+        TextInputComponent
       ],
+      imports: [
+          FormsModule,
+          HttpClientModule
+      ]
     }).compileComponents();
   }));
 
@@ -26,6 +39,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('school-list app is running!');
+    expect(compiled.querySelector('div.title').textContent).toContain('School Manager');
   });
 });

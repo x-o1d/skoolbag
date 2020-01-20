@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 import { ListSchoolsComponent } from './list-schools.component';
+import { TextInputComponent } from '../text-input/text-input.component';
+
 
 describe('ListSchoolsComponent', () => {
   let component: ListSchoolsComponent;
@@ -8,7 +12,14 @@ describe('ListSchoolsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListSchoolsComponent ]
+      declarations: [
+          ListSchoolsComponent,
+          TextInputComponent
+      ],
+      imports: [
+          FormsModule,
+          HttpClientModule
+      ]
     })
     .compileComponents();
   }));
@@ -22,4 +33,5 @@ describe('ListSchoolsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
