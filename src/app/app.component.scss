@@ -1,0 +1,29 @@
+.layout {
+    padding-top: 50px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: rgb(142, 142, 142);
+    margin-top: 5px;
+}
+
+.app {
+    margin-top: 20px;
+}
+
+.spacer {
+    vertical-align: top;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    width: 100px;
+}
+
+.component {
+    vertical-align: top;
+    display: inline-block;
+}

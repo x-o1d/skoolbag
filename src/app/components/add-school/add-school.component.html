@@ -1,0 +1,72 @@
+<div class="add-school">
+    <div class="school-name">
+        <div class="section">
+            <div class="title">
+                School name:
+            </div>
+            <div class="input">
+                <input type="text"
+                       class="input-field"
+                       [(ngModel)]="school.name">
+            </div>
+        </div>
+    </div>
+    <div class="school-address">
+        <div class="address">
+            <div class="section">
+                <div class="title">
+                    Street:
+                </div>
+                <div class="input">
+                    <input type="text"
+                           class="input-field"
+                           [(ngModel)]="school.address.street">
+                </div>
+            </div>
+            <div class="section">
+                <div class="title">
+                    Suburb
+                </div>
+                <div class="input">
+                    <input type="text"
+                           class="input-field"
+                           [(ngModel)]="school.address.suburb">
+                </div>
+            </div>
+            <div class="section">
+                <div class="title">
+                    Postcode:
+                </div>
+                <div class="input">
+                    <input type="text"
+                           class="input-field"
+                           [(ngModel)]="school.address.postcode">
+                </div>
+            </div>
+            <div class="section">
+                <div class="title">
+                    State:
+                </div>
+                <div class="input">
+                    <input type="text"
+                           class="input-field"
+                           [(ngModel)]="school.address.state">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="students">
+        <div class="title">
+            Number of students:
+        </div>
+        <div class="input">
+            <input type="text"
+                   class="input-field"
+                   [(ngModel)]="school.students">
+        </div>
+    </div>
+    <div class="add-button"
+         (click)="saveSchool()">
+        Add School
+    </div>
+</div>
