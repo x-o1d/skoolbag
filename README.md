@@ -25,6 +25,7 @@ npm run deploy
 2. Name based filtering checks to see if the name **starts with** the provided value and is case insensitive. 
 3. Address based filtering checks to see if the address **contains** the provided value and is case insensitive. 
 4. Filtering is done on the frontend after receiving all the school documents and would not scale well for extremely large datasets.
+5. Input validation is only conducted on the frontend.
 
 
 ## Testing
