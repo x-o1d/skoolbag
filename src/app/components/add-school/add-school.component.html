@@ -1,13 +1,14 @@
-<div class="add-school">
+<div class="add-school"
+     [class.add-school_show]="show">
     <div class="school-name">
         <div class="section">
             <div class="title">
                 School name:
             </div>
             <div class="input">
-                <input type="text"
-                       class="input-field"
-                       [(ngModel)]="school.name">
+                <app-text-input defaultText="School name"
+                                (emitText)="school.name = ($event)">
+                </app-text-input>
             </div>
         </div>
     </div>
@@ -15,42 +16,36 @@
         <div class="address">
             <div class="section">
                 <div class="title">
-                    Street:
+                    Address:
                 </div>
                 <div class="input">
-                    <input type="text"
-                           class="input-field"
-                           [(ngModel)]="school.address.street">
+                    <app-text-input defaultText="Street"
+                                    (emitText)="school.address.street = ($event)">
+                    </app-text-input>
                 </div>
             </div>
             <div class="section">
-                <div class="title">
-                    Suburb
-                </div>
+                <div class="title"></div>
                 <div class="input">
-                    <input type="text"
-                           class="input-field"
-                           [(ngModel)]="school.address.suburb">
+                    <app-text-input defaultText="Suburb"
+                                    (emitText)="school.address.suburb = ($event)">
+                    </app-text-input>
                 </div>
             </div>
             <div class="section">
-                <div class="title">
-                    Postcode:
-                </div>
+                <div class="title"></div>
                 <div class="input">
-                    <input type="text"
-                           class="input-field"
-                           [(ngModel)]="school.address.postcode">
+                    <app-text-input defaultText="Postcode"
+                                    (emitText)="school.address.postcode = ($event)">
+                    </app-text-input>
                 </div>
             </div>
             <div class="section">
-                <div class="title">
-                    State:
-                </div>
+                <div class="title"></div>
                 <div class="input">
-                    <input type="text"
-                           class="input-field"
-                           [(ngModel)]="school.address.state">
+                    <app-text-input [defaultText]="'State'"
+                                    (emitText)="school.address.state = ($event)">
+                    </app-text-input>
                 </div>
             </div>
         </div>
@@ -60,13 +55,17 @@
             Number of students:
         </div>
         <div class="input">
-            <input type="text"
-                   class="input-field"
-                   [(ngModel)]="school.students">
+            <app-text-input [defaultText]="'100'"
+                            (emitText)="school.students = ($event)">
+            </app-text-input>
         </div>
     </div>
     <div class="add-button"
          (click)="saveSchool()">
-        Add School
+        Add school
     </div>
+</div>
+<div class="show-hide"
+     (click)="show = !show">
+    {{showHide}}
 </div>

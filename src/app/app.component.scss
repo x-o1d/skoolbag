@@ -15,12 +15,20 @@
     margin-top: 20px;
 }
 
+.section {
+    margin-top: 10px;
+    border-top: 1px solid rgb(217, 217, 217);
+    padding-top: 5px;
+}
+
 .spacer {
     vertical-align: top;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
     font-size: 11px;
     width: 100px;
+    padding-top: 4px;
+    color: rgb(159, 159, 159);
 }
 
 .component {

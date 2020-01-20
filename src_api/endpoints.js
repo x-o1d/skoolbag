@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const School = require('./db/schools');
 
 router.post('/schools', (req, res) => {
-    console.log('here');
+    // create new school document
     School.create(req.body, (err, school) => {
         if(err) {
             console.log(err);
@@ -15,7 +15,14 @@ router.post('/schools', (req, res) => {
 })
 
 router.get('/schools', (req, res) => {
-    res.status(200).json({status: 'its all good'});
+    // retrieve all schools from the database
+    School.find({}, (err, schools) => {
+        if(err) {
+            console.log(err);
+        }
+        res.status(200).json(schools);
+    })
+
 });
 
 module.exports = router;

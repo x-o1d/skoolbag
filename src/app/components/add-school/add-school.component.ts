@@ -19,6 +19,8 @@ export class AddSchoolComponent implements OnInit {
         students: 0
     }
 
+    show: boolean = false;
+
     constructor(private schools: SchoolsService) { }
 
     saveSchool() {
@@ -27,6 +29,13 @@ export class AddSchoolComponent implements OnInit {
         });
     }
 
+    get showHide() {
+        if(this.show) {
+            return 'Hide';
+        } else {
+            return 'Create new school'
+        }
+    }
     ngOnInit() {
 
     }

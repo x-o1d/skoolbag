@@ -1,0 +1,7 @@
+<input type="text"
+       [(ngModel)]="inputText"
+       class="input-field"
+       [class.default-text]="inputText == defaultText"
+       (focus)="inputFocus()"
+       (blur)="inputBlur()"
+       (input)="inputChange()">

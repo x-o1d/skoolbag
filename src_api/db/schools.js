@@ -6,7 +6,7 @@ const schoolSchema = new Schema({
     address: {
         street: String,
         suburb: String,
-        postcose: Number,
+        postcode: Number,
         state: String
     },
     students: Number

@@ -1,1 +1,40 @@
-<p>list-schools works!</p>
+<div class="list-schools">
+    <div class="filter">
+        <div class="filter-title">
+            Filter by:
+        </div>
+        <div class="filter-selector"
+             [class.filter-selector_active]="filterSelector=='Name'"
+             (click)="filterSelector = 'Name'">
+            Name
+        </div>
+        <div class="filter-selector"
+             [class.filter-selector_active]="filterSelector=='Address'"
+             (click)="filterSelector = 'Address'">
+            Address
+        </div>
+        <div class="filter-input">
+            <app-text-input [defaultText]="filterSelector"
+                            (emitText)="filter($event)">
+            </app-text-input>
+        </div>
+
+    </div>
+    <div class="schools">
+        <div class="school"
+             *ngFor="let school of filteredSchoolsList">
+            <div class="name">
+                {{school.name}}
+            </div>
+            <div class="address">
+                {{school.address.street}} ,
+                {{school.address.suburb}} ,
+                {{school.address.postcode}} ,
+                {{school.address.state}}
+            </div>
+            <div class="students">
+                {{school.students}}
+            </div>
+        </div>
+    </div>
+</div>

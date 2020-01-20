@@ -1,6 +1,17 @@
 .add-school {
     font-family: 'Roboto', sans-serif;
     font-size: 11px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out;
+}
+
+.add-school_show {
+    max-height: 400px;
+}
+
+.section {
+    margin-bottom: 3px;
 }
 
 .title {
@@ -19,7 +30,18 @@
 }
 
 .add-button {
+    margin-top: 10px;
     text-align: center;
     padding: 3px;
-    border: 1px solid rgb(219, 219, 219);
+    background-color: rgb(143, 208, 232);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.show-hide {
+    padding-top: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
 }

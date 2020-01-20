@@ -13,15 +13,20 @@ export interface School {
 }
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class SchoolsService {
 
-  baseURL = 'http://localhost:8000/';
+    baseURL = 'http://localhost:8000/';
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  addSchool(school) {
-      return this.http.post<School>(this.baseURL +'api/schools', school);
-  }
+    addSchool(school) {
+        return this.http.post<School>(this.baseURL + 'api/schools', school);
+    }
+
+    getSchools() {
+        return this.http.get<School[]>(this.baseURL + 'api/schools');
+    }
+
 }

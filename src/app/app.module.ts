@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { AddSchoolComponent } from './components/add-school/add-school.component';
 import { ListSchoolsComponent } from './components/list-schools/list-schools.component';
+import { TextInputComponent } from './components/text-input/text-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddSchoolComponent,
-    ListSchoolsComponent
+    ListSchoolsComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
