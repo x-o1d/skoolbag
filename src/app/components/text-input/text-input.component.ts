@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { SchoolsService } from '../../services/schools.service'
 
 @Component({
     selector: 'app-text-input',
     templateUrl: './text-input.component.html',
     styleUrls: ['./text-input.component.scss']
 })
+
 export class TextInputComponent implements OnInit {
 
     @Input() defaultText: string;
@@ -12,9 +14,13 @@ export class TextInputComponent implements OnInit {
     default: boolean = true;
     inputText: string = '';
 
-    constructor() { }
+    constructor(private schools: SchoolsService) { }
 
     ngOnInit() {
+        this.schools.inputsReset.subscribe(() => {
+            this.inputText = '';
+            this.inputBlur();
+        })
     }
 
     ngOnChanges() {

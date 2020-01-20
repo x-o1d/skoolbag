@@ -81,6 +81,7 @@ export class AddSchoolComponent implements OnInit {
             this.schools.addSchool(this.school).subscribe((data) => {
                 this.schools.schoolsUpdated.emit();
                 this.schoolAdded = true;
+                this.schools.inputsReset.emit();
                 setTimeout(() => {
                     this.schoolAdded = false;
                 }, 4000);

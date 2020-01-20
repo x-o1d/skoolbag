@@ -20,7 +20,8 @@ export class SchoolsService {
 
     baseURL = 'http://localhost:8000/';
     public schoolsUpdated: EventEmitter<boolean> = new EventEmitter();
-
+    public inputsReset: EventEmitter<boolean> = new EventEmitter();
+    
     constructor(private http: HttpClient) { }
 
     addSchool(school) {
