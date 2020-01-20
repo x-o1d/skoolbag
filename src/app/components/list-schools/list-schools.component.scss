@@ -22,12 +22,20 @@
 
 .address {
     display: inline-block;
-    width: 350px;
+    width: 300px;
     color: rgb(148, 148, 148);
 }
 
 .students {
     display: inline-block;
+    width: 40px;
+}
+
+.delete {
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+    cursor: pointer;
 }
 
 .filter-title {
@@ -45,7 +53,7 @@
 }
 
 .filter-selector_active {
-    background-color: rgb(143, 208, 232);
+    background-color: rgb(152, 221, 245);
 }
 
 .filter-input {

@@ -9,6 +9,7 @@ router.post('/schools', (req, res) => {
     School.create(req.body, (err, school) => {
         if(err) {
             console.log(err);
+            res.status(500).json(err);
         }
         res.status(200).json({id: school._id});
     });
@@ -19,10 +20,24 @@ router.get('/schools', (req, res) => {
     School.find({}, (err, schools) => {
         if(err) {
             console.log(err);
+            res.status(500).json(err);
         }
         res.status(200).json(schools);
     })
 
+});
+
+router.delete('/schools/:id', (req, res) => {
+    console.log('deleting', req.params.id);
+    // retrieve all schools from the database
+    School.findOneAndDelete({_id: req.params.id}, (err, school) => {
+        if(err) {
+            console.log(err);
+            res.status(500).json(err);
+        } else {
+            res.sendStatus(204);
+        }
+    })
 });
 
 module.exports = router;

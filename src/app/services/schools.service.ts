@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 export interface School {
+    _id: string,
     name: string,
     address: {
         street: string,
@@ -18,6 +19,7 @@ export interface School {
 export class SchoolsService {
 
     baseURL = 'http://localhost:8000/';
+    public schoolsUpdated: EventEmitter = new EventEmitter();
 
     constructor(private http: HttpClient) { }
 
@@ -27,6 +29,10 @@ export class SchoolsService {
 
     getSchools() {
         return this.http.get<School[]>(this.baseURL + 'api/schools');
+    }
+
+    deleteSchool(id) {
+        return this.http.delete(this.baseURL + 'api/schools/' + id);
     }
 
 }

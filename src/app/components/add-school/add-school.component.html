@@ -9,6 +9,10 @@
                 <app-text-input defaultText="School name"
                                 (emitText)="school.name = ($event)">
                 </app-text-input>
+                <div class="error"
+                     *ngIf="nameError">
+                    ^ You need to fill in this field
+                </div>
             </div>
         </div>
     </div>
@@ -22,6 +26,10 @@
                     <app-text-input defaultText="Street"
                                     (emitText)="school.address.street = ($event)">
                     </app-text-input>
+                    <div class="error"
+                         *ngIf="streetError">
+                        ^ You need to fill in this field
+                    </div>
                 </div>
             </div>
             <div class="section">
@@ -30,6 +38,10 @@
                     <app-text-input defaultText="Suburb"
                                     (emitText)="school.address.suburb = ($event)">
                     </app-text-input>
+                    <div class="error"
+                         *ngIf="suburbError">
+                        ^ You need to fill in this field
+                    </div>
                 </div>
             </div>
             <div class="section">
@@ -38,6 +50,10 @@
                     <app-text-input defaultText="Postcode"
                                     (emitText)="school.address.postcode = ($event)">
                     </app-text-input>
+                    <div class="error"
+                         *ngIf="postError">
+                        ^ This must be a number
+                    </div>
                 </div>
             </div>
             <div class="section">
@@ -46,6 +62,10 @@
                     <app-text-input [defaultText]="'State'"
                                     (emitText)="school.address.state = ($event)">
                     </app-text-input>
+                    <div class="error"
+                         *ngIf="stateError">
+                        ^ You need to fill in this field
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,9 +75,13 @@
             Number of students:
         </div>
         <div class="input">
-            <app-text-input [defaultText]="'100'"
+            <app-text-input defaultText="Number of students"
                             (emitText)="school.students = ($event)">
             </app-text-input>
+            <div class="error"
+                 *ngIf="studentsError">
+                ^ This must be a number
+            </div>
         </div>
     </div>
     <div class="add-button"

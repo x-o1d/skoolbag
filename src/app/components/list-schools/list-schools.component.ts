@@ -17,10 +17,23 @@ export class ListSchoolsComponent implements OnInit {
     constructor(private schools: SchoolsService) { }
 
     ngOnInit() {
+        this.updateSchools();
+        this.schools.schoolsUpdated.subscribe(() => {
+            this.updateSchools();
+        })
+    }
+
+    updateSchools() {
         this.schools.getSchools().subscribe((schools) => {
             this.schoolsList = schools;
             this.filter('');
         })
+    }
+
+    delete(id) {
+        this.schools.deleteSchool(id).subscribe((status) => {
+            this.schools.schoolsUpdated.emit();
+        });
     }
 
     filter(input) {
