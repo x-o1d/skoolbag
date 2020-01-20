@@ -11,30 +11,30 @@
 }
 
 .titles {
-    font-size: 8px;
+    font-size: 11px;
     font-weight: bold;
     padding-bottom: 10px;
 }
 
 .school {
     margin-bottom: 10px;
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .name {
     display: inline-block;
-    width: 80px;
+    width: 150px;
 }
 
 .address {
     display: inline-block;
-    width: 300px;
+    width: 350px;
     color: rgb(148, 148, 148);
 }
 
 .students {
     display: inline-block;
-    width: 40px;
+    width: 80px;
 }
 
 .delete {
@@ -47,14 +47,14 @@
 .filter-title {
     display: inline-block;
     padding: 0 5px 0 5px;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .filter-selector {
     display: inline-block;
     border-radius: 3px;
     padding: 5px;
-    font-size: 8px;
+    font-size: 11px;
     cursor: pointer;
 }
 
